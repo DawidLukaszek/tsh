@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="pl">
+<head>
+  <meta charset="utf-8">
+  <title>Zadanie rekrutacyjne</title>
+  <meta name="description" content="Zadanie rekrutacyjne">
+  <meta name="author" content="Dawid Łukaszek">
+  <meta name="robots" content="noindex, nofollow">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width,initial-scale=1">
+	<meta name="theme-color" content="#2589b8">
+  <link rel="stylesheet" href="css/style.css">
+  <script src="https://kit.fontawesome.com/458de10ba8.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="js/pagination.js"></script>
+  <script src="js/modal.js"></script>
+</head>
+<body>
+  <div id="modal-bg" onClick="closeModal()"></div>
+  <div id="modal">
+    <p class="modal-title">
+      Informations
+    </p>
+    <div class="line" style="margin: 10px 0;"></div>
+    <div id="modal-content">
+
+    </div>
+  </div>
+  <section id="page">
+    <div class="wrapper">
+      <p class="page-title">
+        Where your money goes
+      </p>
+      <p class="page-subtitle">
+        Payments made by Chichester District Council to individual suppliers with a value over £500 made within October.
+      </p>
+      <div class="line"></div>
+      <div class="search-menu">
+        <input type="text" placeholder="Search suppliers"/>
+        <div class="select-wrapper">
+          <select>
+            <option>Select pound rating</option>
+          </select>
+        </div>
+        <button class="gray-button">Reset</button>
+        <button class="blue-button">Search</button>
+      </div>
+      <div class="table">
+        <div class="row title-row">
+          <div class="el first-el">Supplier</div>
+          <div class="el second-el">Pound Rating</div>
+          <div class="el third-el">Reference</div>
+          <div class="el fourth-el">Value</div>
+        </div>
+        <div id="page-content">
+          <!-- load JSON data from pagination.js - loadPage() function -->
+        </div>
+      </div>
+      <div id="pagination">
+        <!-- load pages count from pagination.js - loadPage() function -->
+      </div>
+    </div>
+  </section>
+  <script>
+    $(document).ready(function(){
+      loadPage(1); //load first page if document is ready
+    });
+  </script>
+</body>
+</html>
